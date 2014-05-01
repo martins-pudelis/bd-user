@@ -1,0 +1,23 @@
+{
+    "name": "bd/bd-user",
+    "type": "library",
+    "description": "User management module for Bd",
+    "keywords": ["bd", "user management", "user"],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name": "Martins Pudelis",
+            "email": "martins.pudelis@wallcity.lv"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "BdUser": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
