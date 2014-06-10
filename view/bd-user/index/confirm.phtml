@@ -1,0 +1,20 @@
+<?php
+    use BdUser\Entity\User;
+
+    /** @var User $user */
+    $user = $this->user;
+?>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="" method="post">
+            <div class="alert alert-danger">
+                <p><strong><?= $this->translate('You are about to remove user permanently from database! Are you sure?'); ?></strong></p>
+                <br>
+                <a class="btn btn-default" href="<?= $this->url('bd_user_index'); ?>"><?= $this->translate('Cancel'); ?></a>
+                <button class="btn btn-danger" type="submit"><?= $this->translate('Proceed'); ?></button>
+
+            </div>
+        </form>
+    </div>
+</div>

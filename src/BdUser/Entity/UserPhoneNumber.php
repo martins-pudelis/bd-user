@@ -17,7 +17,7 @@ class UserPhoneNumber extends Entity implements UserPhoneNumberInterface
     const TYPE_WORK = 'work';
     const TYPE_CAR = 'car';
 
-    protected $allPhoneType = array(
+    public static $allPhoneType = array(
         self::TYPE_MOBILE,
         self::TYPE_WORK,
         self::TYPE_CAR,
@@ -35,7 +35,7 @@ class UserPhoneNumber extends Entity implements UserPhoneNumberInterface
 
     /**
      * @ORM\ManyToOne(targetEntity="UserDetail", inversedBy="phoneNumber")
-     * @var User
+     * @var UserDetail
      */
     protected $userDetail;
 
@@ -43,65 +43,97 @@ class UserPhoneNumber extends Entity implements UserPhoneNumberInterface
      * @ORM\Column(type="string")
      * @var string
      */
-    protected $firstName;
+    protected $phoneType;
 
     /**
      * @ORM\Column(type="string")
      * @var string
      */
-    protected $middleName;
-
-    /**
-     * @ORM\Column(type="string")
-     * @var string
-     */
-    protected $lastName;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $changeDate;
-
-    /**
-     * @ORM\Column(type="string", length=100)
-     * @var string
-     */
-    protected $email;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $country;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $city;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $street;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $streetNumber;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     * @var string
-     */
-    protected $zip;
+    protected $number;
 
     /**
      * @ORM\Column(type="string", length=40)
      * @var string
      */
     protected $creationDate;
+
+    /**
+     * @param array $allPhoneType
+     */
+    public function setAllPhoneType($allPhoneType)
+    {
+        $this->allPhoneType = $allPhoneType;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getAllPhoneType()
+    {
+        return self::$allPhoneType;
+    }
+
+    /**
+     * @param string $creationDate
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param string $number
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param string $phoneType
+     */
+    public function setPhoneType($phoneType)
+    {
+        $this->phoneType = $phoneType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoneType()
+    {
+        return $this->phoneType;
+    }
+
+    /**
+     * @param \BdUser\Entity\UserDetail $userDetail
+     */
+    public function setUserDetail($userDetail)
+    {
+        $this->userDetail = $userDetail;
+    }
+
+    /**
+     * @return \BdUser\Entity\UserDetail
+     */
+    public function getUserDetail()
+    {
+        return $this->userDetail;
+    }
 }

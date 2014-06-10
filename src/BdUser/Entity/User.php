@@ -27,6 +27,12 @@ class User extends Entity implements UserInterface
         self::STATUS_LOCKED,
     );
 
+    public static $knownCountries = array(
+        'lt' => 'Lithuania',
+        'ee' => 'Estonia',
+        'lv' => 'Latvia',
+    );
+
     /**
      * @var integer
      *
@@ -79,4 +85,140 @@ class User extends Entity implements UserInterface
      * @var string
      */
     protected $status;
+
+    /**
+     * @param array $allStatuses
+     */
+    public function setAllStatuses($allStatuses)
+    {
+        $this->allStatuses = $allStatuses;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAllStatuses()
+    {
+        return $this->allStatuses;
+    }
+
+    /**
+     * @param \BdAuthentication\Entity\AuthenticationData $authenticationData
+     */
+    public function setAuthenticationData($authenticationData)
+    {
+        $this->authenticationData = $authenticationData;
+    }
+
+    /**
+     * @return \BdAuthentication\Entity\AuthenticationData
+     */
+    public function getAuthenticationData()
+    {
+        return $this->authenticationData;
+    }
+
+    /**
+     * @param mixed $authenticationHistory
+     */
+    public function setAuthenticationHistory($authenticationHistory)
+    {
+        $this->authenticationHistory = $authenticationHistory;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthenticationHistory()
+    {
+        return $this->authenticationHistory;
+    }
+
+    /**
+     * @param string $creationDate
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param mixed $passwordRecoveryRequest
+     */
+    public function setPasswordRecoveryRequest($passwordRecoveryRequest)
+    {
+        $this->passwordRecoveryRequest = $passwordRecoveryRequest;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPasswordRecoveryRequest()
+    {
+        return $this->passwordRecoveryRequest;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param \BdUser\Entity\UserDetail $userDetail
+     */
+    public function setUserDetail($userDetail)
+    {
+        $this->userDetail = $userDetail;
+    }
+
+    /**
+     * @return \BdUser\Entity\UserDetail
+     */
+    public function getUserDetail()
+    {
+        return $this->userDetail;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getKnownCountries()
+    {
+        return self::$knownCountries;
+    }
 }

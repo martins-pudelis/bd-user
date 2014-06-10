@@ -11,7 +11,7 @@ use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use BdUser\Exception;
 
-class AuthServiceFactory implements FactoryInterface
+class UserServiceFactory implements FactoryInterface
 {
     /**
      * @param ServiceLocatorInterface $serviceManager

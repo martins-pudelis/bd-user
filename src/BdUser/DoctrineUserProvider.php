@@ -115,7 +115,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function getNewUser()
     {
-        $this->userProvider->getNew();
+        return $this->userProvider->getNew();
     }
 
     /**
@@ -123,7 +123,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function getNewUserDetail()
     {
-        $this->userDetailProvider->getNew();
+        return $this->userDetailProvider->getNew();
     }
 
     /**
@@ -131,7 +131,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function getNewUserPhoneNumber()
     {
-        $this->userPhoneNumberProvider->getNew();
+        return $this->userPhoneNumberProvider->getNew();
     }
 
     /**
@@ -139,7 +139,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findAllUsers()
     {
-        $this->userProvider->findAll();
+        return $this->userProvider->findAll();
     }
 
     /**
@@ -147,7 +147,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findAllUserDetail()
     {
-        $this->userDetailProvider->findAll();
+        return $this->userDetailProvider->findAll();
     }
 
     /**
@@ -155,7 +155,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findAllUserPhoneNumber()
     {
-        $this->userPhoneNumberProvider->findAll();
+        return $this->userPhoneNumberProvider->findAll();
     }
 
     /**
@@ -164,7 +164,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUsersBy(array $criteria)
     {
-        $this->userProvider->findBy($criteria);
+        return $this->userProvider->findBy($criteria);
     }
 
     /**
@@ -173,7 +173,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUserDetailBy(array $criteria)
     {
-        $this->userDetailProvider->findBy($criteria);
+        return $this->userDetailProvider->findBy($criteria);
     }
 
     /**
@@ -182,7 +182,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUserPhonesBy(array $criteria)
     {
-        $this->userPhoneNumberProvider->findBy($criteria);
+        return $this->userPhoneNumberProvider->findBy($criteria);
     }
 
     /**
@@ -191,7 +191,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUser($id)
     {
-        $this->userProvider->find($id);
+        return $this->userProvider->find($id);
     }
 
     /**
@@ -200,7 +200,7 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUserDetail($id)
     {
-        $this->userDetailProvider->find($id);
+        return $this->userDetailProvider->find($id);
     }
 
     /**
@@ -209,6 +209,6 @@ class DoctrineUserProvider implements UserProviderInterface
      */
     public function findUserPhoneNumber($id)
     {
-        $this->userPhoneNumberProvider->find($id);
+        return $this->userPhoneNumberProvider->find($id);
     }
 }
