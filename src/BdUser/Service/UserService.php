@@ -107,21 +107,24 @@ class UserService implements EventManagerAwareInterface
     /**
      * @param UserInterface $user
      */
-    public function storeUser(UserInterface $user) {
+    public function storeUser(UserInterface $user)
+    {
         $this->userProvider->storeUser($user);
     }
 
     /**
      * @param UserPhoneNumberInterface $userPhoneNumber
      */
-    public function storeUserPhoneNumber(UserPhoneNumberInterface $userPhoneNumber) {
+    public function storeUserPhoneNumber(UserPhoneNumberInterface $userPhoneNumber)
+    {
         $this->userProvider->storeUserPhoneNumber($userPhoneNumber);
     }
 
     /**
      * @param UserDetailInterface $userDetail
      */
-    public function storeUserDetail(UserDetailInterface $userDetail) {
+    public function storeUserDetail(UserDetailInterface $userDetail)
+    {
         $this->userProvider->storeUserDetail($userDetail);
     }
 
