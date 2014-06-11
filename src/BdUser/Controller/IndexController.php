@@ -67,13 +67,10 @@ class IndexController extends AbstractActionController
                 $user->setCreationDate($dateTime);
                 $user->setUsername($params->fromPost('username'));
                 $user->setStatus(User::STATUS_ACTIVE);
-                $this->userService()->storeUser($user);
-
 
                 $userDetail = $this->userService()->getNewUserDetail();
                 $userDetail->setCreationDate($dateTime);
                 $userDetail->setCity($params->fromPost('city'));
-                $userDetail->setUser($user);
                 $userDetail->setEmail($params->fromPost('email'));
                 $userDetail->setFirstName($params->fromPost('first-name'));
                 $userDetail->setMiddleName($params->fromPost('middle-name'));
@@ -103,9 +100,12 @@ class IndexController extends AbstractActionController
                     $passwordChangeService->createPassword($params->fromPost('password'))
                 );
 
-                $authData->setUser($user);
                 $authData->setPasswordUntilValidDate($dateTime);
                 $authService->storeAuthenticationData($authData);
+
+                $user->setUserDetail($userDetail);
+                $user->setAuthenticationData($authData);
+                $this->userService()->storeUser($user);
 
                 $this->flashMessenger()->addSuccessMessage('User created successfully');
                 $this->redirectToIndex();
